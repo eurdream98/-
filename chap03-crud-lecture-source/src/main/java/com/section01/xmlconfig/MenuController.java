@@ -50,13 +50,11 @@ public class MenuController {
         menu.setPrice(price);
         menu.setCategoryCode(categoryCode);
 
-        System.out.println(menuService.registMenu(menu));
-
-        /*if(menuService.registMenu(menu)) {
+        if(menuService.registMenu(menu)) {
             printResult.printSuccessMessage("insert");
         } else {
             printResult.printErrorMessage("insert");
-        }*/
+        }
 
     }
 
