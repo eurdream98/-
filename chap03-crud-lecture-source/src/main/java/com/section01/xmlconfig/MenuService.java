@@ -8,8 +8,13 @@ import org.apache.ibatis.session.SqlSession;
 
 public class MenuService {
 
+    /* Service는 sqlSession을 생성하여 DAO를 통해 쿼리를 수행하도록 하고, 결과값을 반환함 */
+    /* 마찬가지로 sqlSession은 사용 후 반드시 반납해야 함*/
+
+    /* Service에서 공통 사용할 객체 선언 */
     private final MenuDAO menuDAO;
 
+    /*  Service 객체 생성 시 사용할 객체도 생성 */
     public MenuService() {
         menuDAO = new MenuDAO();
     }

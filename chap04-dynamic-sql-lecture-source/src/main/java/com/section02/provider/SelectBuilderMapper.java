@@ -20,6 +20,7 @@ public interface SelectBuilderMapper {
             @Result(property = "orderableStatus", column = "ORDERABLE_STATUS"),
     })
 
+    /* Provider Anntation을 통해 Provider 클래스를 type으로 설정하고 method로 쿼리ID 설정 */
     @SelectProvider(type=SelectBuilderProvider.class, method="selectAllMenu")
     List<MenuDTO> selectAllMenu();
 

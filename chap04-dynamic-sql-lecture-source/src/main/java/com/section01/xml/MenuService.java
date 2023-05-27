@@ -20,7 +20,7 @@ public class MenuService {
         SqlSession sqlSession = getSqlSession();
         mapper = sqlSession.getMapper(DynamicSqlMapper.class);
 
-        /* hashmap의 key 혹은 dto의 getter를 이용하여 조건문의 값을 비교한다. */
+        /* hashmap의 key 혹은 dto의 getter를 이용하여 조건문의 값을 비교함 */
         Map<String, Integer> map = new HashMap<>();
         map.put("price", price);
 
@@ -82,6 +82,7 @@ public class MenuService {
         Map<String, List<Integer>> criteria = new HashMap<>();
         criteria.put("randomMenuCodeList", randomMeunuCodeList);
         List<MenuDTO> menuList = mapper.searchMenuByRandomMenuCode(criteria);
+        /* mapper xml 파일에서 foreach 태그 사용 시 static 필드에 직접 접근하는 경우 아래처럼 parameter 넘겨주지 않아도 됨 */
         //List<MenuDTO> menuList = mapper.searchMenuByRandomMenuCode();
 
         if(menuList != null && menuList.size() > 0) {

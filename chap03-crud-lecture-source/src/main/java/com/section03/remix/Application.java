@@ -6,6 +6,10 @@ import java.util.Scanner;
 
 public class Application {
 
+    /* Java Configuration과 XML Configuration을 혼용하는 경우
+     * MyBatis 설정은 Java로 하고, MenuMapper 인터페이스에는 메소드명만 작성함
+     * 수행할 쿼리는 xml 파일에 각각 MenuMapper의 메소드명과 동일한 id를 가진 태그로 작성 */
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);

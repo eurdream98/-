@@ -13,6 +13,9 @@ import org.apache.ibatis.session.SqlSession;
 
 public interface MenuMapper {
 
+    /* 결과를 받아올 ResultMap 설정 */
+    /* @Result는 각각 DTO객체의 필드명(= property 속성)과 대상 테이블(= column 속성)의 컬럼명을 매핑시킴
+     * @Result의 속성 중 id가 true이면 PK임을 의미 */
     @Results(id="menuResultMap", value = {
             @Result(id = true, property = "code", column = "MENU_CODE"),
             @Result(property = "name", column = "MENU_NAME"),
@@ -41,7 +44,7 @@ public interface MenuMapper {
             "  FROM TBL_MENU\n" +
             " WHERE ORDERABLE_STATUS = 'Y'\n" +
             "   AND MENU_CODE = #{ code }")
-    @ResultMap("menuResultMap")			//위에서 사용한 resultMap을 재사용할 수 있다.
+    @ResultMap("menuResultMap")			//위에서 사용한 resultMap을 재사용
     MenuDTO selectMenuByCode(int code);
 
     @Insert("INSERT\n" +

@@ -3,6 +3,7 @@
 <configuration>
     <properties resource="config/connection-info.properties"/>
 
+    <!-- 별칭 등록 -->
     <typeAliases>
         <typeAlias type="com.common.SearchCriteria" alias="SearchCriteria"/>
     </typeAliases>
@@ -18,6 +19,8 @@
             </dataSource>
         </environment>
     </environments>
+
+    <!-- 패키지로 mapper 등록할 수 있음 -->
     <mappers>
         <package name="com.section01.xml"/>
         <package name="com.section02.provider"/>

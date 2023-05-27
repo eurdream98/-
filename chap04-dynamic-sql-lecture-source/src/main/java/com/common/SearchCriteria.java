@@ -1,5 +1,6 @@
 package com.common;
 
+/* 검색 기준은 실제 DB 데이터 송수신에 쓰일 객체는 아니므로 직렬화하지 않아도 무방함 */
 public class SearchCriteria {
 
     private String condition;

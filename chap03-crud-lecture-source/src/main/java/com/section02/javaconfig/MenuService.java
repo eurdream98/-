@@ -14,7 +14,7 @@ public class MenuService {
 
         SqlSession sqlSession = getSqlSession();
 
-        /* sqlSession은 요청 단위 생성이다. 따라서 getMapper로 메소드 스코프로 매번 불러와야 한다. */
+        /* sqlSession은 요청 단위 생성이므로, getMapper도 메소드 스코프로 매번 불러와야 함 */
         menuMapper = sqlSession.getMapper(MenuMapper.class);
         List<MenuDTO> menuList = menuMapper.selectAllMenu();
 

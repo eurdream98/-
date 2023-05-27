@@ -15,9 +15,9 @@ public interface SqlBuilderMapper {
     @UpdateProvider(type=SqlBuilderProvider.class, method="modifyMenu")
     int modifyMenu(MenuDTO menu);
 
-    /* Map이나 getter가 있는 DTO가 아닌 기본 자료형 값을 전달해야 하는 경우 param 어노테이션을 이용한다.
-     * 전달해야 하는 값이 2개 이상인 경우도 파람 어노테이션의 key값에 의해 값을 찾을 수 있다.
-     * 단, Provider 메소드의 매개변수 선언부는 없어야 한다.
+    /* Map이나 getter가 있는 DTO가 아닌 기본 자료형 값을 전달해야 하는 경우 param 어노테이션을 이용
+     * 전달해야 하는 값이 2개 이상인 경우도 파람 어노테이션의 key값으로 value값을 찾을 수 있음
+     * 단, Provider 메소드의 "매개변수 선언부"는 없어야 함
      * */
     @DeleteProvider(type=SqlBuilderProvider.class, method="deleteMenu")
     int deleteMenu(@Param("code") int code);

@@ -15,6 +15,7 @@ public interface DynamicSqlMapper {
     List<MenuDTO> searchMenuBySupCategory(SearchCriteria searchCriteria);
 
     List<MenuDTO> searchMenuByRandomMenuCode(Map<String, List<Integer>> criteria);
+    /* mapper xml 파일에서 foreach 태그 사용 시 static 필드에 직접 접근하는 경우 아래처럼 parameter 넘겨주지 않아도 됨 */
     //List<MenuDTO> searchMenuByRandomMenuCode();
 
     List<MenuDTO> searchMenuByCodeOrSearchAll(SearchCriteria searchCriteria);
